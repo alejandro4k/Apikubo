@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-$active_group = 'local';
+$active_group = 'produccion';
 $query_builder = TRUE;
 
 $db['default'] = array(
@@ -100,6 +100,28 @@ $db['local'] = array(
 	'username' => 'postgres',
 	'password' => 'root',
 	'database' => 'kubo',
+	'dbdriver' => 'postgre',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE,
+	'port' => 5432
+);
+$db['produccion'] = array(
+	'dsn'	=> '',
+	'hostname' => 'ec2-3-211-48-92.compute-1.amazonaws.com',
+	'username' => 'fwhdjpenyarhpk',
+	'password' => 'a20a59b4b217674297f4a7871028dca10ea1aeaad8b7c3280fdc64906bca651d',
+	'database' => 'd6eblvlm99f6oe',
 	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
